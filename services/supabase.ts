@@ -11,9 +11,12 @@ import {
 } from '@/types';
 
 const SUPABASE_URL = 'https://nbtzzysnqezxuypmrmrm.supabase.co';
-const SUPABASE_ANON_KEY = process.env.SUPABASE_ANON_KEY ?? '';
+const SUPABASE_KEY =
+  process.env.EXPO_PUBLIC_SUPABASE_KEY ??
+  process.env.SUPABASE_ANON_KEY ??
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5idHp6eXNucWV6eHV5cG1ybXJtIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3MjIwNzQ1NywiZXhwIjoyMDg3NzgzNDU3fQ.y0j2fOikfRhM_ZJHOIlQ7tvDq4UdsyvbeGszwg4qJd4';
 
-export const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
+export const supabase = createClient(SUPABASE_URL, SUPABASE_KEY, {
   auth: {
     storage: AsyncStorage,
     autoRefreshToken: true,
