@@ -11,7 +11,7 @@ import {
 } from '@/types';
 
 const SUPABASE_URL = 'https://nbtzzysnqezxuypmrmrm.supabase.co';
-const SUPABASE_ANON_KEY = 'sb_publishable_cnERxv6y_HWk5jY0oStt3w_wfh6izQF';
+const SUPABASE_ANON_KEY = process.env.SUPABASE_ANON_KEY ?? '';
 
 export const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
   auth: {
